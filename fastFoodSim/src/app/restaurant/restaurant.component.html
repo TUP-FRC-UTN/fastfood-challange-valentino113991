@@ -1,0 +1,10 @@
+<div class="container mt-3">
+    <h3>Restaurant Fast Food</h3>
+    <div class="border border-warning">
+        <h5>Historial de pedidos...</h5>
+        {{pedidoService.pedidos | json}}
+    </div>
+    <app-delivery-point></app-delivery-point>
+    <app-pos></app-pos>
+    <app-kitchen></app-kitchen>
+</div>

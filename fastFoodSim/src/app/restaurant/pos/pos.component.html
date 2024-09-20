@@ -1,0 +1,43 @@
+<div class="border border-primary">
+    <h5>Componente Point of Sell - POS</h5>
+
+    <div class="mt-3 mb-3">
+        <form #form="ngForm" class="form-group" (ngSubmit)="enviarFormulario(form)">
+            <div class="row">
+                <div class="mb-1">
+                    <label for="idNombre">Nombre</label>
+                    <input name="name" [(ngModel)]="pedido.name" type="text" class="form-control" id="idNombre" required
+                        minlength="3" #name="ngModel">
+                    @if (name.invalid && (name.dirty || name.touched)) {
+                    @if (name.getError("minlength")) {
+                    <div class="error">El nombre debe tener al menos 3 caracteres</div>
+                    }
+                    @if (name.getError("required")) {
+                    <div class="error">Ingrese un nombre por favor</div>
+                    }
+                    }
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 mt-2">
+                    <label for="idDescripcion">Pedido</label>
+                    <input name="descripcion" [(ngModel)]="pedido.description" type="text" class="form-control"
+                        id="idDescripcion" required minlength="3" #descripcion="ngModel">
+                    @if (descripcion.invalid && (descripcion.dirty || descripcion.touched)) {
+                    @if (descripcion.getError("minlength")) {
+                    <div class="error">El pedido debe tener al menos 3 caracteres</div>
+                    }
+                    @if (descripcion.getError("required")) {
+                    <div class="error">Ingrese un pedido por favor</div>
+                    }
+                    }
+                </div>
+            </div>
+
+            <div class="btn-submit">
+                <button [disabled]="form.invalid" type="submit">Ordenar</button>
+            </div>
+        </form>
+    </div>
+</div>

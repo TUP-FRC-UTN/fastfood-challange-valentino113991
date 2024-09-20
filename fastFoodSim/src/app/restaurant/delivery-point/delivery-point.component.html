@@ -1,0 +1,8 @@
+<div class="mt-3 mb-3 border border-danger">
+    <h5 class="mt-4">Pedidos listos para entrega</h5>
+    <ul *ngFor="let pE of pedidoService.pedidosParaEntregar">
+        <li>
+            {{pE.number}} - {{pE.name}} <span><button (click)="entregar(pE)">Entregar!</button></span>
+        </li>
+    </ul>
+</div>

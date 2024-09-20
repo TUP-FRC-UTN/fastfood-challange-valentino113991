@@ -1,0 +1,18 @@
+<div class="mt-3 border border-success">
+    <h5 class="mt-4">Componente Cocina</h5>
+    <p class="mb-2"><b>Pendiente de cocinar</b></p>
+    <ul *ngFor="let p of pedidoService.pedidosParaCoccion">
+        <li>
+            ({{p.number}}) - {{p.description}} <span><button (click)="agregarACoccion(p)">Cocinar</button></span>
+        </li>
+    </ul>
+    <p><b>Pedidos en cocción</b></p>
+    <ul *ngFor="let pedidoEnCoccion of pedidosSegundaFase">
+        <li>
+            ({{pedidoEnCoccion.number}}) - {{pedidoEnCoccion.description}}
+        </li>
+    </ul>
+    @if(pedidosSegundaFase.length > 0){
+    <button (click)="terminarCoccion()" >Pedido Terminado!</button>
+    }
+</div>
